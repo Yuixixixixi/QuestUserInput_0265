@@ -58,3 +58,4 @@ fun FormatDataDiri(modifier: Modifier = Modifier) {
         }
     }
 }
+var textAlamat by remember { mutableStateOf("") }
