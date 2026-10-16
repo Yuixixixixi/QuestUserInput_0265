@@ -62,8 +62,17 @@ fun FormatDataDiri(modifier: Modifier = Modifier) {
                     label = { Text("Alamat") },
                     onValueChange = { textAlamat = it }
                 )
+                HorizontalDivider(
+                    modifier = Modifier.padding(
+                        bottom = dimensionResource(R.dimen.padding_medium),
+                        top = dimensionResource(R.dimen.padding_medium)
+                    ),
+                    thickness = dimensionResource(R.dimen.divider_tipis),
+                    color = Color.DarkGray
+                )
             }
         }
     }
+
 }
 
