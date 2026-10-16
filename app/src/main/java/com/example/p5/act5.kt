@@ -7,3 +7,7 @@ import androidx.compose.ui.Modifier
 fun FormatDataDiri(modifier: Modifier = Modifier) {
     // Skeletons
 }
+@Composable
+fun FormatDataDiri(modifier: Modifier = Modifier) {
+    var textNama by remember { mutableStateOf("") }
+}
