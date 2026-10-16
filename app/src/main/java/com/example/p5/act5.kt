@@ -24,6 +24,7 @@ fun FormatDataDiri(modifier: Modifier = Modifier) {
     var textNama by remember { mutableStateOf("") }
     var textJK by remember { mutableStateOf("") }
     val gender: List<String> = listOf("Laki-laki", "Perempuan")
+    var textAlamat by remember { mutableStateOf("") }
 
     Column(
         modifier = modifier.padding(top = 50.dp),
@@ -65,4 +66,4 @@ fun FormatDataDiri(modifier: Modifier = Modifier) {
         }
     }
 }
-var textAlamat by remember { mutableStateOf("") }
+
