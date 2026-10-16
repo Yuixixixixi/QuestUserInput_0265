@@ -25,3 +25,5 @@ horizontalAlignment = Alignment.CenterHorizontally
         onValueChange = { textNama = it }
     )
 }
+var textJK by remember { mutableStateOf("") }
+val gender: List<String> = listOf("Laki-laki", "Perempuan")
