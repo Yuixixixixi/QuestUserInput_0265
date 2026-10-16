@@ -90,6 +90,10 @@ fun FormatDataDiri(modifier: Modifier = Modifier) {
             enabled = textAlamat.isNotEmpty() && textNama.isNotEmpty(),
             onClick = {
                 // Aksi submit
+                nama = textNama
+                jenis = textJK
+                alamat = textAlamat
+
             }
         ) {
             Text(stringResource(R.string.submit))
