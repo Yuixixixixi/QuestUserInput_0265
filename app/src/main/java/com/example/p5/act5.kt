@@ -115,8 +115,7 @@ fun FormatDataDiri(modifier: Modifier = Modifier) {
             elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
             colors = CardDefaults.cardColors(containerColor = Color.Black),
             modifier = Modifier
-                .wrapContentHeight(100.dp)
-                .width(300.dp)
+                .width(300.dp) // Cukup atur lebar dan biarkan tinggi menyesuaikan isi
         ) {
             Column(
                 modifier = Modifier.padding(horizontal = 15.dp, vertical = 15.dp),
