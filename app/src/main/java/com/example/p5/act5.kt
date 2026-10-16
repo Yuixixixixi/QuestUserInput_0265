@@ -1,4 +1,4 @@
-package com.example.p5
+package com.example.p5 // Sesuaikan dengan nama package proyek Anda
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
@@ -10,13 +10,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.p5.R // Sesuaikan import R dengan package Anda
 
 @Composable
 fun FormatDataDiri(modifier: Modifier = Modifier) {
+    // Variabel-variabel untuk mengingat nilai masukan dari keyboard (menggunakan 'by' agar lebih ringkas)
     var textNama by remember { mutableStateOf("") }
+    var textAlamat by remember { mutableStateOf("") }
     var textJK by remember { mutableStateOf("") }
     val gender: List<String> = listOf("Laki-laki", "Perempuan")
-    var textAlamat by remember { mutableStateOf("") }
+
+    // Variabel-variabel untuk menyimpan data yang diperoleh dari komponen UI
     var nama by remember { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
     var jenis by remember { mutableStateOf("") }
@@ -84,28 +88,40 @@ fun FormatDataDiri(modifier: Modifier = Modifier) {
             color = Color.DarkGray
         )
 
-        // Tombol Submit (Hanya satu tombol yang diperlukan)
+        // Tombol Submit
         Button(
             modifier = Modifier.width(250.dp),
             enabled = textAlamat.isNotEmpty() && textNama.isNotEmpty(),
             onClick = {
-                // Aksi submit
                 nama = textNama
                 jenis = textJK
                 alamat = textAlamat
-
             }
         ) {
             Text(stringResource(R.string.submit))
         }
+
+        HorizontalDivider(
+            modifier = Modifier.padding(
+                bottom = dimensionResource(R.dimen.padding_medium),
+                top = dimensionResource(R.dimen.padding_medium)
+            ),
+            thickness = dimensionResource(R.dimen.divider_tipis),
+            color = Color.DarkGray
+        )
+
+        // ElevatedCard untuk Menampilkan Hasil
         ElevatedCard(
             elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
             colors = CardDefaults.cardColors(containerColor = Color.Black),
             modifier = Modifier
-                .height(100.dp)
+                .wrapContentHeight()
                 .width(300.dp)
         ) {
-            Column(modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp)) {
+            Column(
+                modifier = Modifier.padding(horizontal = 15.dp, vertical = 15.dp),
+                verticalArrangement = Arrangement.spacedBy(6.dp)
+            ) {
                 Text(text = "Nama : $nama", color = Color.White)
                 Text(text = "Gender : $jenis", color = Color.White)
                 Text(text = "Alamat : $alamat", color = Color.White)
